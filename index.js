@@ -75,6 +75,12 @@ app.post('/multipleFiles', upload.array('files'), (req, res, next) => {
     res.send({status: 'ok'});
 });
 
+app.get('/test', (req, res) => {
+   res.status(200).json({
+       message: 'test work!'
+   });
+});
+
 app.use(morgan());
 
 app.listen(PORT, () => console.log(`server running on ${PORT} ...`));
